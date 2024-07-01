@@ -1,0 +1,26 @@
+{
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never",
+    "source.fixAll.eslint": "explicit"
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "never"
+    },
+    "files.trimTrailingWhitespace": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+  },
+  "files.trimTrailingWhitespace": true,
+  "editor.linkedEditing": true,
+  "cSpell.words": [
+    "Debezium",
+    "Kafka",
+    "kafkajs"
+  ],
+}
