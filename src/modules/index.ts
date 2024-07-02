@@ -1,2 +1,2 @@
-export * from './auth.module';
-export * from './graphql.module';
+export * from "./auth.module";
+export * from "./graphql.module";

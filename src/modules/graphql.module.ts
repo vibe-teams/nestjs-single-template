@@ -1,8 +1,8 @@
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
-import httpStatusPlugin from '../plugins/http-status.plugin';
+import { join } from "node:path";
+import { ApolloDriver, type ApolloDriverConfig } from "@nestjs/apollo";
+import { Module } from "@nestjs/common";
+import { GraphQLModule } from "@nestjs/graphql";
+import httpStatusPlugin from "../plugins/http-status.plugin";
 
 @Module({
   imports: [
@@ -11,14 +11,14 @@ import httpStatusPlugin from '../plugins/http-status.plugin';
       context: (ctx) => ctx,
       plugins: [httpStatusPlugin],
       subscriptions: {
-        'subscriptions-transport-ws': {
+        "subscriptions-transport-ws": {
           onConnect: (params) => ({ connectionParams: params }),
-          path: '/graphql',
+          path: "/graphql",
         },
       },
-      typePaths: ['*/**/*.gql'],
-      path: '/graphql',
-      autoSchemaFile: join(process.cwd(), '/src/schema.gql'),
+      typePaths: ["*/**/*.gql"],
+      path: "/graphql",
+      autoSchemaFile: join(process.cwd(), "/src/schema.gql"),
     }),
   ],
 })

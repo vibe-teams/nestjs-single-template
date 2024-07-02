@@ -1,5 +1,5 @@
-import { Type } from '@nestjs/common';
-import { Field, InputType, ObjectType } from '@nestjs/graphql';
+import type { Type } from "@nestjs/common";
+import { Field, InputType, ObjectType } from "@nestjs/graphql";
 
 export function PaginationResponse<T>(classRef: Type<T>) {
   @ObjectType({ isAbstract: true })

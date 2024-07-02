@@ -1,31 +1,31 @@
-import { INestApplication, INestMicroservice } from '@nestjs/common';
-import { join } from 'path';
-import * as winston from 'winston';
+import { join } from "node:path";
+import type { INestApplication, INestMicroservice } from "@nestjs/common";
+import * as winston from "winston";
 
 export function createLogger(name: string) {
   const currentDate = new Date();
   const dateString = currentDate.toISOString().slice(0, 10);
   const logFilePath = join(
     __dirname,
-    '../../',
-    'logs',
+    "../../",
+    "logs",
     name,
     `${dateString}.log`,
   );
   return winston.createLogger({
-    level: 'info',
+    level: "info",
     format: winston.format.combine(
       winston.format.timestamp(),
       winston.format.json(),
     ),
     transports: [
-      new winston.transports.File({ filename: logFilePath, level: 'info' }),
+      new winston.transports.File({ filename: logFilePath, level: "info" }),
     ],
   });
 }
 
 export function useLogger(
-  app: INestMicroservice | INestApplication<any>,
+  app: INestMicroservice | INestApplication<unknown>,
   name: string,
 ) {
   const logger = createLogger(name);

@@ -1,13 +1,13 @@
-import { JWT } from '@/constants/jwt';
-import { Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt';
+import { JWT } from "@/constants/jwt";
+import { Module } from "@nestjs/common";
+import { JwtModule } from "@nestjs/jwt";
 
 @Module({
   imports: [
     JwtModule.register({
       global: true,
       secret: JWT.SECRET,
-      signOptions: { expiresIn: '2 days' },
+      signOptions: { expiresIn: "2 days" },
     }),
   ],
 })

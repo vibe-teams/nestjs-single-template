@@ -1,4 +1,4 @@
-import { Mutation, Resolver } from '@nestjs/graphql';
+import { Mutation, Resolver } from "@nestjs/graphql";
 
 @Resolver()
 export class AuthResolver {

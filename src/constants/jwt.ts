@@ -1,3 +1,3 @@
 export const JWT = {
-  SECRET: 'secretKey for JWT token',
+  SECRET: "secretKey for JWT token",
 };
